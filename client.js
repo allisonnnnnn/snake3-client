@@ -11,6 +11,11 @@ const connect = function() {
     console.log(data);
   });
 
+  // inside the connect function, use the .on method on our conn object to register a "connect" handler (a callback function)
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: CCC");
+  });
   return conn;
 };
 
